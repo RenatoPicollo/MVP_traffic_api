@@ -9,14 +9,15 @@ Esta API foi desenvolvida com objetivo de alimentar um banco de dados através d
 ---
 ### Como Executar
 
-
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
 
-1 - Clone o repositório contido no endereço "https://github.com/RenatoPicollo/MVP_traffic_api". Este repositório contém a pasta raiz do projeto "MVP", a pasta "traffic_api" e o arquivo "requeriments.txt".
+1 - Crie uma pasta chamada "MVP", que será a pasta raiz do projeto.
 
-2 - Clone o repositório contido no endereço "https://github.com/RenatoPicollo/MVP_traffic_front". Este repositório contém a pasta "traffic_front", que deverá ser copiada para a pasta raiz do projeto "MVP". Contém também o arquivo "exemplos_placas.zip", contendo dois arquivos de imagens, que deverá ser descompactada para alguma pasta de escolha do usuário.
+2 - Clone dentro da pasta "MVP" o repositório contido no endereço "https://github.com/RenatoPicollo/MVP_traffic_api". Este repositório contém a pasta "traffic_api" e o arquivo "requeriments.txt".
 
-3 - Execute os seguintes comandos na sequência apresentada (execute na pasta raiz do projeto):
+3 - Clone dentro da pasta "MVP" o repositório contido no endereço "https://github.com/RenatoPicollo/MVP_traffic_front". Este repositório contém a pasta "traffic_front" e o arquivo "exemplos_placas.zip", contendo dois arquivos de imagens, que deverá ser descompactado para alguma pasta de escolha do usuário.
+
+4 - Execute os seguintes comandos na sequência apresentada (execute na pasta raiz do projeto):
 
 
 C:\Users\user\AppData\Local\Programs\Python\Python39\python.exe -m venv env
@@ -32,11 +33,11 @@ python -m pip install -r .\traffic_api\requirements.txt
 python -c "from traffic_api.services.criptografia import gerar_nova_chave; print(gerar_nova_chave())"
 
 
-4 - Crie um arquivo na pasta raiz do projeto chamado ".env". Copie do terminal a chave de criptografia gerada e cole dentro do arquivo ".env" da seguinte forma:
+5 - Crie um arquivo na pasta raiz do projeto chamado ".env". Copie do terminal a chave de criptografia gerada e cole dentro do arquivo ".env" da seguinte forma:
 
 CHAVE_CRIPTOGRAFIA="DIGITE_AQUI_SUA_CHAVE"
 
-5 - Execute a API através do comando abaixo:
+6 - Execute a API através do comando abaixo:
 flask --app traffic_api/app run --host 0.0.0.0 --port 5000 --reload
 
 
