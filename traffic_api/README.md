@@ -6,6 +6,8 @@ Este projeto faz parte do MVP desenvolvido para a disciplina **Desenvolvimento F
 
 Esta API foi desenvolvida com objetivo de alimentar um banco de dados através de imagens geradas por câmeras espalhadas por ruas da cidade, que identificam veículos em movimento, e capturam uma foto de sua placa. Essa imagem da placa é processada através de um algoritmo de reconhecimento e leitura de imagens utilizando a biblioteca "easyocr" para Python. Esse algoritmo lê a placa do carro, realiza um pós processamento visando eliminar ambiguidades de interpretação do modelo e chama uma algoritmo de criptografia SHA-256, cujo objetivo é proteger a informação da placa do carro, baseado na LGPD. Esses dados são armazenados numa tabela de um banco de dados SQL chamada "registro", que contém os seguintes dados: "id" (primary key gerada através da placa do carro criptografada, juntamente com a data e hora da imagem obtida), "placa_criptografada", "data", "hora" e "local_id". Essa última coluna, possui uma referência FK com a coluna "id" da tabela chamada "local". Essa tabela possui também as colunas "nome" e "descrição". O objetivo desse sistema é coletar uma quantidade massiva de dados dos veículos que transitam pela cidade, de forma a treinar um modelo de machine learning, que tente prever o comportamento do trânsito e ajude na tomada de decisões que impactem no fluxo de veículos como temporização de semáforos, aplicação de faixas reversíveis, etc. Para testar o sistema, foi desenvolvido uma página web, que simula o envio de imagens para o servidor.
 
+Link para vídeo no YouTube: https://youtu.be/qNiny70rtZA
+
 ---
 ### Como Executar
 
@@ -28,7 +30,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 python -m pip install --upgrade pip
 
-python -m pip install -r .\traffic_api\requirements.txt
+python -m pip install -r .\requirements.txt
 
 python -c "from traffic_api.services.criptografia import gerar_nova_chave; print(gerar_nova_chave())"
 
